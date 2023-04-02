@@ -1,0 +1,131 @@
+
+$height: ($react-timelines-track-height - 4 * $react-timelines-element-spacing) / 4;
+.rt-element {
+  cursor: pointer;
+  position: relative;
+  height: $height;
+  line-height: $height;
+  background: #06f;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rt-element__content {
+  position: absolute;
+  padding: 0 10px;
+  width: 100%;
+  color: black;
+  white-space: nowrap;
+  font-weight: bold;
+  text-overflow: ellipsis;
+}
+
+.rt-element__tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 2;
+  padding: 5px 10px;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-align: center;
+  font-size: small;
+  background: $react-timelines-text-color;
+  color: white;
+  transform: translateX(-50%) scale(0);
+  pointer-events: none;
+
+  &::before {
+    $size: 4px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-top: $size solid $react-timelines-text-color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    transform: translateX(-50%);
+    content: ' ';
+  }
+
+  .tooltip-phase-in, .tooltip-phase-out {
+    display: none;
+  }
+
+  .rt-element__tooltip__date {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+.rt-element:not(.phase-in-out):hover > .rt-element__tooltip,
+.rt-element:not(.phase-in-out):focus > .rt-element__tooltip,
+.rt-element.phase-in-out > .phase:hover ~ .rt-element__tooltip {
+  $delay: 0.3s;
+  transform: translateX(-50%) scale(1);
+  transition: transform 0s $delay;
+}
+
+.rt-element.phase-in-out > .phase:hover ~ .rt-element__tooltip > .phase {
+  display: block;
+}
+
+.rt-element.registration {
+  background-color: $react-timelines-option-registration-color;
+}
+
+.rt-element.types {
+  background-color: $react-timelines-option-types-color;
+} 
+
+.rt-element.effective {
+  background-color: $react-timelines-option-effective-color;
+} 
+
+.rt-element.vehicles {
+  background-color: $react-timelines-option-all-vehicles-color;
+} 
+
+.rt-element.expiration {
+  background-color: $react-timelines-option-expiration-color;
+}
+
+.rt-element.phase-in-out {
+  $padding: $height / 2;
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  .phase {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    top: $height / -2;
+    left: $height * -1;
+    border-radius: 100%;
+    width: $height * 2;
+    height: $height * 2;
+    background-color: $react-timelines-option-phase-in-color;
+    box-shadow: 1px 1px 0px 0px #00000040
+  }
+  .phase-in {
+    background-color: $react-timelines-option-phase-in-color;
+  }
+  .phase-out {
+    background-color: $react-timelines-option-phase-out-color;
+  }
+}
+
+.rt-track__element__grid {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  inset: 0px;
+}
+
+.rt-track__element__grid__line {
+  width: 100%;
+  height: 2px;
+  background-color: $react-timelines-keyline-color;
+}

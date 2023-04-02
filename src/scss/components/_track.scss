@@ -1,0 +1,15 @@
+.rt-track__elements {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: $react-timelines-track-height + $react-timelines-border-width;
+  // border-bottom: $react-timelines-border-width solid $react-timelines-keyline-color;
+}
+
+.rt-track__element {
+  $height: ($react-timelines-track-height - 4 * $react-timelines-element-spacing) / 4;
+  height: $height;
+  position: relative;
+  width: inherit;
+}

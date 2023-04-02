@@ -1,0 +1,110 @@
+.rt-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  padding: 8px 16px;
+  margin: 0 0 $react-timelines-spacing 0;
+  background-color: #fff;
+}
+
+.rt-controls__button {
+  display: inline-block;
+  width: $react-timelines-button-size;
+  height: $react-timelines-button-size;
+  overflow: hidden;
+  background-color: $react-timelines-button-background-color;
+  color: transparent;
+  white-space: nowrap;
+  padding: $react-timelines-spacing;
+  outline: none;
+  border: none;
+
+  svg {
+    width: $react-timelines-button-size / 2;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: $react-timelines-button-background-color-hover;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $react-timelines-button-background-color-hover;
+  }
+}
+
+.rt-controls__button[disabled] {
+  opacity: 0.5;
+}
+
+.rt-controls__button--toggle {
+}
+
+.rt-controls__label {
+  flex-grow: 1;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+.rt-controls__options {
+  font-size: small;
+}
+
+.rt-controls__option {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  span {
+    position: absolute;
+    top: 0px;
+    transform: translateY(50%);
+    right: -15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+  }
+}
+
+
+.option_registration {
+  background-color: $react-timelines-option-registration-color;
+}
+
+.option_types {
+    background-color: $react-timelines-option-types-color;
+}
+
+.option_effective {
+    background-color: $react-timelines-option-effective-color;
+}
+
+.option_all_vehicles {
+    background-color: $react-timelines-option-all-vehicles-color;
+}
+
+.option_expiration {
+    background-color: $react-timelines-option-expiration-color;
+}
+
+.option_phase_in {
+    background-color: $react-timelines-option-phase-in-color;
+}
+
+.option_phase_out {
+    background-color: $react-timelines-option-phase-out-color;
+}
+
+.rt-controls__content {
+  min-width: fit-content;
+}
