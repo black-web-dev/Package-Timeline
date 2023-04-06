@@ -8,7 +8,7 @@
   "types": "./dist/esm/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://silver-it@github.com/hololux/react-document-timeline"
+    "url": "git+https://black-web-dev@github.com/package-timeline"
   },
   "scripts": {
     "clean": "rimraf lib dist",
