@@ -1,7 +1,5 @@
 # React Document Timeline
 
-[**Demo**](https://jsainsburyplc.github.io/react-timelines/)
-
 ## Install
 
 ```sh
